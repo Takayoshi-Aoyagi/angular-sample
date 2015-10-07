@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="bower_components/angularjs/angular.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-app="app" class="input-group" ng-controller="DatePickerController">
+      <input type="text" class="form-control" ng-model="date" datepicker-popup is-open="datePickerOpen">
+      <div class="input-group-addon" ng-click="toggleDatePicker($event)">
+	<i class="glyphicon glyphicon-calendar"></i>
+      </div>
+    </div>
+  </body>
+</html>
