@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="helloApp">
+  <head>
+    <title></title>
+    <script src="../bower_components/angularjs/angular.min.js"></script>
+    <script src="controllers.js"></script>
+  </head>
+  <body>
+    <div ng-controller='HelloController'>
+      <input ng-model='greeting.text'>
+      <p>{{greeting.text}}, World</p>
+    </div>
+  </body>
+</html>
