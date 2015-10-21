@@ -7,8 +7,12 @@
   </head>
   <body>
     <div ng-controller='FilterController'>
-      <select ng-model="item" ng-options="item.name for item in items | filter:{type:type.code}"></select>
-      <select ng-model="type" ng-options="type.name for type in types | filter:{code:item.type}"></select>
+      <select ng-model="item" ng-options="item.name for item in items | filter:{type:type.code}">
+	<option value="">Select Option</option>
+      </select>
+      <select ng-model="type" ng-options="type.name for type in types | filter:{code:item.type}">
+	<option value="">Select Option</option>
+      </select>
       <p>item</p>
       {{ item | json }}
       <p>type</p>
