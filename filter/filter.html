@@ -8,7 +8,11 @@
   <body>
     <div ng-controller='FilterController'>
       <select ng-model="item" ng-options="item.name for item in items | filter:{type:type.code}"></select>
-      <select ng-model="type" ng-options="type.name for type in types"></select>
+      <select ng-model="type" ng-options="type.name for type in types | filter:{code:item.type}"></select>
+      <p>item</p>
+      {{ item | json }}
+      <p>type</p>
+      {{ type | json }}
     </div>
   </body>
 </html>
