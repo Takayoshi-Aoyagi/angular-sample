@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="helloApp">
+  <head>
+    <title></title>
+    <script src="../bower_components/angularjs/angular.min.js"></script>
+    <script src="controllers.js"></script>
+  </head>
+  <body>
+    <div ng-controller='HelloController'>
+      <button ng-click="append()">Append</button>
+      <table>
+	<tr ng-repeat="row in rows">
+	  <td>{{row.id}}</td>
+	  <td>
+	    <select ng-options="item for item in row.items" ng-model="row.selected">{{row.itmes}}</select>
+	  </td>
+	</tr>
+      </table>
+    </div>
+  </body>
+</html>
