@@ -12,7 +12,13 @@ var Controllers = angular.module('Controllers', []);
  */
 app.factory('$exceptionHandler', function () {
     return function(exception, cause) {
-	alert(JSON.stringify(exception, null, '  ') + "\n" + cause);
+	var msg = JSON.stringify(exception, null, '  ');
+	var div = document.getElementById("err");
+	div.innerText = "ERROR!!!!\n" + msg;
+	//alert(msg + "\n" + cause);
+	setTimeout(function () {
+	    div.innerText = "";
+	}, 3000);
     };
 });
 
@@ -41,6 +47,8 @@ app.factory('Dummy', ['$resource', function ($resource) {
  * Nothing to do
  */
 Controllers.controller('HelloController', ['$scope', 'Dummy', function ($scope, Dummy) {
-    Dummy.query();
+    setTimeout(function () {
+	Dummy.query();
+    }, 2000);
 }]);
 
